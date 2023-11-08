@@ -1,8 +1,9 @@
 import Head from "next/head";
-import Navbar from "./Components/Navbar";
+import Navbar from "../Components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
-const about = ({ data }) => {
+const index = ({ data }) => {
   return (
     <>
       <Head>
@@ -14,14 +15,16 @@ const about = ({ data }) => {
       <h1>Ini halaman About</h1>
       {data.map((item) => (
         <div key={item.id}>
-          <h2>{item.name}</h2>
+          <Link href={`/about/${item.id}`}>
+            <h2>{item.name}</h2>
+          </Link>
         </div>
       ))}
     </>
   );
 };
 
-export default about;
+export default index;
 
 export const getStaticProps = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");

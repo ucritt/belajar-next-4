@@ -13,14 +13,9 @@ const Navbar = () => {
             <li>
                 <Link href="\profile">Profile</Link>
             </li>
-            <li>
-                <Link href="\contact">contact</Link>
-            </li>
-            
         </ul>
     </nav>
     );
-
 };
 
 export default Navbar;
